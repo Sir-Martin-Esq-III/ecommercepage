@@ -1,0 +1,29 @@
+@import "../../styles/base.scss";
+.image-container {
+  max-width: 40%;
+  .imageSelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .imgButton {
+      border: 0;
+      border-radius: 10px;
+      width: fit-content;
+      background-color: none;
+      width: 20%;
+      &:hover {
+        cursor: pointer;
+      }
+      &:focus {
+        border: 3px solid $Orange;
+        img {
+          opacity: 0.5;
+        }
+      }
+      img {
+        border-radius: 10px;
+        width: 100%;
+      }
+    }
+  }
+}

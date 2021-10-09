@@ -1,0 +1,12 @@
+@import "../../styles/base.scss";
+
+.product-info-container {
+  margin-inline: 30px;
+  text-align: left;
+  .brand-name {
+    color: $Orange;
+  }
+  .product-desc {
+    color: $Dark-grayish-blue;
+  }
+}

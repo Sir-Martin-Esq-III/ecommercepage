@@ -1,0 +1,13 @@
+.App {
+  .pageContent {
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    .pageContent {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

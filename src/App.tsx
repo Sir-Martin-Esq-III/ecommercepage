@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useContext, useState } from "react";
+import logo from "./logo.svg";
+import "./styles.scss";
+import Header from "./components/header";
+import Carousel from "./components/carousel";
+import ProductInfo from "./components/product-info";
+import ImageSelector from "./components/imageSelector";
+import useWindowSize from "./hooks/useWindowSize";
+import { CartContext } from "./contexts/cartContext";
+
+interface Icard {
+  productImage?: any;
+  productName: string;
+  count: number;
+  productPrice: number;
+}
 
 function App() {
+  const [cartItems, setcartItems] = useState<Icard[]>([]);
+  const { width } = useWindowSize();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CartContext.Provider value={{ cart: cartItems, setCart: setcartItems }}>
+        <Header />
+        <div className="pageContent">
+          {width && width < 768 ? <Carousel /> : <ImageSelector />}
+          <ProductInfo />
+        </div>
+      </CartContext.Provider>
     </div>
   );
 }
