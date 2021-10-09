@@ -1,10 +1,6 @@
 import React, { ReactElement } from "react";
-interface Icard {
-  productImage?: any;
-  productName: string;
-  count: number;
-  productPrice: number;
-}
+import { Icard } from "../../consts";
+import "./styles.scss";
 
 interface Props {
   products: Icard[];

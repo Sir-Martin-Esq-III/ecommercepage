@@ -13,7 +13,16 @@ export default function ProductInfo({}: Props): ReactElement {
         Featuring a durable rubber outer sole, they’ll withstand everything the
         weather can offer.
       </p>
-      <div className="product-price"></div>
+      <div className="product-price">
+        <div className="left">
+          <h2 className="Price">$150</h2>
+          <p className="discount">50%</p>
+        </div>
+
+        <div className="right">
+          <h2 className="oldPrice">%300</h2>
+        </div>
+      </div>
       <AddToCart price={150} product={"Fall Limited Edition Sneakers"} />
     </div>
   );

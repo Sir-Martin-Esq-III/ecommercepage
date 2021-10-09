@@ -2,6 +2,7 @@ import React, { ReactElement, useContext, useState } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 import { CartContext } from "../../contexts/cartContext";
 import Cart from "../cart";
+import { MOBILE_SIZE } from "../../consts";
 import "./styles.scss";
 //assets
 import { ReactComponent as CartIcon } from "../../assets/icon-cart.svg";
@@ -18,7 +19,6 @@ export default function Header({}: Props): ReactElement {
 
   const { width } = useWindowSize();
   const { cart } = useContext(CartContext);
-  const MOBILE_SIZE = 768;
 
   const menuItems = (
     <ul className="menuList">
@@ -32,7 +32,7 @@ export default function Header({}: Props): ReactElement {
   return (
     <div className="header">
       <div className="left">
-        {width && width < MOBILE_SIZE && (
+        {width && width < MOBILE_SIZE ? (
           <div className="hamburger">
             <div
               className="icon-container"
@@ -51,17 +51,17 @@ export default function Header({}: Props): ReactElement {
               </div>
             )}
           </div>
+        ) : (
+          menuItems
         )}
-        {width && width > MOBILE_SIZE && menuItems}
         <div className="logo">
           <Logo />
         </div>
       </div>
       <div className="right">
-        <div className="cart">
-          <div className="cart-icon" onClick={() => setcartOpen(!cartOpen)}>
-            <CartIcon />
-          </div>
+        <div className="cart-icon" onClick={() => setcartOpen(!cartOpen)}>
+          <CartIcon />
+
           {cartOpen && <Cart products={cart} />}
         </div>
         <div className="profile">

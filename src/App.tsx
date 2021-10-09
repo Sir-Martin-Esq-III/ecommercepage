@@ -7,13 +7,7 @@ import ProductInfo from "./components/product-info";
 import ImageSelector from "./components/imageSelector";
 import useWindowSize from "./hooks/useWindowSize";
 import { CartContext } from "./contexts/cartContext";
-
-interface Icard {
-  productImage?: any;
-  productName: string;
-  count: number;
-  productPrice: number;
-}
+import { Icard } from "./consts";
 
 function App() {
   const [cartItems, setcartItems] = useState<Icard[]>([]);

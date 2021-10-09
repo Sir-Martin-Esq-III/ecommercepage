@@ -1,11 +1,5 @@
 import { createContext } from "react";
-
-interface Icard {
-  productImage?: any;
-  productName: string;
-  count: number;
-  productPrice: number;
-}
+import { Icard } from "../consts";
 
 interface IcartContext {
   cart: Icard[];

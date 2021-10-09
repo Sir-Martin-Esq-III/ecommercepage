@@ -32,3 +32,12 @@
     background-color: $Orange;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .add-to-cart {
+    flex-direction: row;
+    .counter {
+      width: 40%;
+    }
+  }
+}

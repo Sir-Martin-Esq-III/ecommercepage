@@ -3,7 +3,7 @@ import img1 from "../../assets/image-product-1.jpg";
 import img2 from "../../assets/image-product-2.jpg";
 import img3 from "../../assets/image-product-3.jpg";
 import img4 from "../../assets/image-product-4.jpg";
-
+import "./styles.scss";
 interface Props {
   initalImage?: number;
 }
@@ -23,9 +23,10 @@ export default function Carousel({ initalImage }: Props): ReactElement {
     }
   };
   return (
-    <div>
-      <img src={imageArray[currentImageIndex]} alt="" width="100%" />
+    <div className="carousel">
       <button onClick={() => handleButtonClick(-1)}>{"<"}</button>
+      <img src={imageArray[currentImageIndex]} alt="" width="100%" />
+
       <button onClick={() => handleButtonClick(1)}>{">"}</button>
     </div>
   );

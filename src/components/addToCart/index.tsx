@@ -25,11 +25,21 @@ export default function AddToCart({ price, product }: Props): ReactElement {
   };
 
   const addToBasketHandler = () => {
-    counter > 0 &&
-      setCart([
-        ...cart,
-        { productName: product, productPrice: price, count: counter },
-      ]);
+    if (counter > 0) {
+      const haveProduct = cart.findIndex(
+        (item) => item.productName === product
+      );
+      if (haveProduct >= 0) {
+        let newCart = cart;
+        newCart[haveProduct].count += counter;
+        setCart(newCart);
+      } else {
+        setCart([
+          ...cart,
+          { productName: product, productPrice: price, count: counter },
+        ]);
+      }
+    }
   };
   return (
     <div className="add-to-cart">

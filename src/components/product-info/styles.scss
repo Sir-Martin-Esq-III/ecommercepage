@@ -9,4 +9,21 @@
   .product-desc {
     color: $Dark-grayish-blue;
   }
+  .product-price {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .left {
+      display: flex;
+      flex-direction: row;
+      .discount {
+        border-radius: 10px;
+        background-color: $Pale-orange;
+        text-align: center;
+        color: $Orange;
+      }
+    }
+    .right {
+    }
+  }
 }
