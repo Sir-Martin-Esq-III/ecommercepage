@@ -59,10 +59,10 @@ export default function Header({}: Props): ReactElement {
         </div>
       </div>
       <div className="right">
-        <div className="cart-icon" onClick={() => setcartOpen(!cartOpen)}>
-          <CartIcon />
+        <div className="cart-icon">
+          <CartIcon onClick={() => setcartOpen(!cartOpen)} />
 
-          {cartOpen && <Cart products={cart} />}
+          {cartOpen && <Cart />}
         </div>
         <div className="profile">
           <img src={pfp} alt="" />

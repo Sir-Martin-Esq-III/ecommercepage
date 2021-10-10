@@ -1,19 +1,13 @@
 import React, { ReactElement, useContext, useState } from "react";
 import { CartContext } from "../../contexts/cartContext";
 import "./styles.scss";
+import img1 from "../../assets/image-product-1-thumbnail.jpg";
 //assets
 import { ReactComponent as CartIcon } from "../../assets/icon-cart.svg";
 interface Props {
   price: number;
   product: string;
 }
-
-type Icart = {
-  productImage?: any;
-  productName: string;
-  count: number;
-  productPrice: number;
-};
 
 export default function AddToCart({ price, product }: Props): ReactElement {
   const [counter, setcounter] = useState(0);
@@ -36,7 +30,12 @@ export default function AddToCart({ price, product }: Props): ReactElement {
       } else {
         setCart([
           ...cart,
-          { productName: product, productPrice: price, count: counter },
+          {
+            productName: product,
+            productPrice: price,
+            count: counter,
+            productImage: img1,
+          },
         ]);
       }
     }

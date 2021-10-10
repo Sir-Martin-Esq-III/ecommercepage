@@ -1,13 +1,22 @@
-// .carousel {
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   button {
-//     &:first-child {
-//       transform: translateX(200%);
-//     }
-//     &:last-child {
-//       transform: translateX(-200%);
-//     }
-//   }
-// }
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(0px, 100%, 500px);
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    button {
+      display: grid;
+      place-content: center;
+      position: relative;
+      border-radius: 50%;
+      border: 0;
+      aspect-ratio: 1;
+      height: 50px;
+    }
+  }
+}
+
+@media screen and(max-width:768px) {
+}

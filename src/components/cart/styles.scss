@@ -1,4 +1,7 @@
+@import "../../styles/base.scss";
+
 .cart {
+  z-index: 2;
   position: absolute;
   background-color: white;
   left: 5%;
@@ -6,4 +9,22 @@
   top: 5vh;
   border-radius: 10px;
   width: 90%;
+  .products-section {
+    border-top: 1px solid $Grayish-blue;
+    display: flex;
+    flex-direction: column;
+    .emptyCart {
+      justify-self: center;
+      align-items: center;
+      height: 100%;
+    }
+    .cartItem {
+      display: flex;
+      flex-direction: row;
+      .cartInfo {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
 }
